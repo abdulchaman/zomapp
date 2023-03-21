@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import './listing.css'
 import ListingDisplay from './ListingDisplay';
 const url = "http://3.17.216.66:4000/restaurant?mealtype_id=";
 
@@ -14,7 +15,7 @@ class ListingApi extends Component{
         return(
             <>
                 <div className="row">
-                    <div className="mainListing">
+                    <div id="mainListing">
                         <div id="filter">
 
                         </div>
