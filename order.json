@@ -1,0 +1,54 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "hotelName": "Food Adda",
+      "name": "Nikita",
+      "email": "niki@gmail.com",
+      "address": "YRT 45/13",
+      "phone": 9938452323,
+      "cost": 358,
+      "menuItem": "15,11"
+    },
+    {
+      "id": 2,
+      "hotelName": "Burger King",
+      "name": "Anuj",
+      "email": "anuj@gmail.com",
+      "address": "Saheed Nagar",
+      "phone": "9777454565",
+      "cost": 438.14,
+      "menuItem": "52,54,55"
+    },
+    {
+      "id": 3,
+      "hotelName": "Pandit Ji Paratha Hut",
+      "name": "Abdu",
+      "email": "niki@gmail.com",
+      "address": "YRT 45/13",
+      "phone": 9938452323,
+      "cost": 275,
+      "menuItem": "8,7,6,9"
+    },
+    {
+      "id": 4,
+      "hotelName": "Pandit Ji Paratha Hut",
+      "name": "Abdul",
+      "email": "abdul@gmail.com",
+      "address": "BBSR",
+      "phone": "9978786540",
+      "cost": 275,
+      "menuItem": "8,7,6,9"
+    },
+    {
+      "id": 5,
+      "hotelName": "Pandit Ji Paratha Hut",
+      "name": "Raj",
+      "email": "raj@gmail.com",
+      "address": "Cuttack",
+      "phone": "8908173475",
+      "cost": 195,
+      "menuItem": "9,6,7"
+    }
+  ]
+}
