@@ -49,6 +49,26 @@
       "phone": "8908173475",
       "cost": 195,
       "menuItem": "9,6,7"
+    },
+    {
+      "id": 6,
+      "hotelName": "Chandni Chowk 2 Bangalore",
+      "name": "mojo",
+      "email": "mojo@gmail.com",
+      "address": "YRT 45/13",
+      "phone": 9938452323,
+      "cost": 405.9,
+      "menuItem": "63,65,64"
+    },
+    {
+      "id": 7,
+      "hotelName": "Food Adda",
+      "name": "Raaz",
+      "email": "raaz@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "98531245",
+      "cost": 358,
+      "menuItem": "15,11"
     }
   ]
 }

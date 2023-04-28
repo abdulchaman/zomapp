@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {Link} from 'react-router-dom';
 import "./details.css";
+import Header from '../../Header';
 import MenuDisplay from './displayMenu';
 const restUrl ="http://3.17.216.66:4000/details";
 const menuUrl ="http://3.17.216.66:4000/menu";
@@ -28,6 +29,7 @@ class Details extends Component{
         let {details} = this.state;
         return(
             <>
+                <Header></Header>
                 <div className="main">
                     <div className="tileImage">
                         <div className="imageClass">

@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from "axios";
 import './listing.css'
 import ListingDisplay from './ListingDisplay';
+import CuisineFilter from "../filter/cuisineFilter";
+import CostFilter from "../filter/costFilter";
+import Header from '../../Header';
 const url = "http://3.17.216.66:4000/restaurant?mealtype_id=";
 
 class ListingApi extends Component{
@@ -11,13 +14,20 @@ class ListingApi extends Component{
         restaurantList:''
        }
     }
+    setDataPerFilter=(data)=>{
+        this.setState({restaurantList:data})
+    }
     render(){
         return(
             <>
+                <Header></Header>
                 <div className="row">
                     <div id="mainListing">
                         <div id="filter">
-
+                            <center><h3>Filters</h3></center>
+                            <hr></hr>
+                            <CuisineFilter mealId={this.props.match.params.mealId} restPerCuisine={(data)=>this.setDataPerFilter(data)}></CuisineFilter>
+                            <CostFilter mealId={this.props.match.params.mealId} restPerCost={(data)=>this.setDataPerFilter(data)}></CostFilter>
                         </div>
                         <ListingDisplay restData={this.state.restaurantList}></ListingDisplay>
                     </div>
