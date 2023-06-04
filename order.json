@@ -69,6 +69,56 @@
       "phone": "98531245",
       "cost": 358,
       "menuItem": "15,11"
+    },
+    {
+      "id": 8,
+      "hotelName": "Burger King",
+      "name": "chaman",
+      "email": "chaman@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "8908173475",
+      "cost": 169,
+      "menuItem": "52"
+    },
+    {
+      "id": 9,
+      "hotelName": "Burger King",
+      "name": "chaman",
+      "email": "chaman@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "8908173475",
+      "cost": 169,
+      "menuItem": "52"
+    },
+    {
+      "id": 10,
+      "hotelName": "Burger King",
+      "name": "chaman",
+      "email": "chaman@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "8908173475",
+      "cost": 169,
+      "menuItem": "52"
+    },
+    {
+      "id": 11,
+      "hotelName": "Food Adda",
+      "name": "Raaz",
+      "email": "raaz@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "98531245",
+      "cost": 99,
+      "menuItem": "15"
+    },
+    {
+      "id": 89153,
+      "hotelName": "AMA Cafe",
+      "name": "Raaz",
+      "email": "raaz@gmail.com",
+      "address": "YRT 45/13",
+      "phone": "98531245",
+      "cost": 275,
+      "menuItem": "34"
     }
   ]
 }

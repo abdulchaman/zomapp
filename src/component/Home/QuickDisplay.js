@@ -6,21 +6,23 @@ const QuickDisplay = (props)=>{
           if(mealData){
             return mealData.map((item)=>{
                 return(
-                    <Link to={`/listing/${item.mealtype_id}`} key={item._id}>
-                        <div className="tileContainer">
-                            <div className="tileComponent1">
-                                <img src={item.meal_image} alt="breakfast"/>
-                            </div>
-                            <div className="tileComponent2">
-                                <div className="componentHeading">
-                                    <span>{item.mealtype}</span>
+                    <div className='mealTypewp' key={item._id}>
+                        <Link to={`/listing/${item.mealtype_id}`} className='mealType'>
+                            <div className="tileContainer">
+                                <div className="tileComponent1">
+                                    <img src={item.meal_image} alt="breakfast"/>
                                 </div>
-                                <div className="componentSubHeading">
-                                    {item.content}
+                                <div className="tileComponent2">
+                                    <div className="componentHeading">
+                                        <span>{item.mealtype}</span>
+                                    </div>
+                                    <div className="componentSubHeading">
+                                        <p>Explore city's top restaurants</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </Link>                
+                        </Link> 
+                    </div>               
                 )
             })
           }
@@ -28,13 +30,15 @@ const QuickDisplay = (props)=>{
     return(
         <>
             <div id="quickSearch">
-                <span id="QuickHeading">
+                <h2 id="QuickHeading">
                     Quick Search
-                </span>
-                <span id="QuickSubHeading">
+                </h2>
+                <h3 id="QuickSubHeading">
                     Find Restaurants By Meal Type
-                </span>
-                {renderMeal(props)}
+                </h3>
+                <div className='meal_type_con'>
+                    {renderMeal(props)}
+                </div>
             </div>
              
         </>

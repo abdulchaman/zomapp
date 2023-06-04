@@ -1,23 +1,84 @@
 footer{
-    margin-top:2%;
-    height:120px;
-    width:100%;
-    background-color:#3b2632;
-    color: white;
-    text-align: center;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+.foot_con{
+    display: flex;
+    justify-content: space-between;
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+.ft_lg a{
+    font-family: 'Metrophobic', sans-serif;
+    color: #000;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
+}
+.ft_lg a:hover,
+.ft_lg a:focus{
+    text-decoration: none;
+    color: #000;
+}
+.ft_lg {
+    margin-bottom: 2rem;
 }
 
-
-ul{
+.ft_cn{
+    margin-bottom: 1.4rem;
+}
+.ft_cn a{
+    color: #000;
+    line-height: 1;
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.ft_cn i{
+    margin-right: 1rem;
+}
+.ft_cn a:hover,
+.ft_cn a:focus{
+    text-decoration: none;
+}
+.ft_ttl{
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0px 0px 1.2rem;
+}
+.ft_cl ul{
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ft_cl li{
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: rgb(105, 105, 105);
+    margin: 0.5rem 0px;
+}
+.ft_scl{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.ft_scl a{
+    width: 2.4rem;
+    height: 2.4rem;
+    background: #000;
+    border-radius: 100%;
+    position: relative; 
+}
+.ft_scl i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    color: #fff;
 }
 
-.footDiv{
-    float:left;
-    width:32%;
-    border-right: 2px solid white;
-}
-
-.noborder{
-    border:none
-}

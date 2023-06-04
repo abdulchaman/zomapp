@@ -5,15 +5,15 @@ const url="http://3.17.216.66:4000/menuItem";
 const placeOrder="http://localhost:9870/orders";
 class PlaceOrder extends Component{
     constructor(props){
-        let sessionData = sessionStorage.getItem('userInfo')?sessionStorage.getItem('userInfo').split(','):[]
         super(props);
+        let sessionData = sessionStorage.getItem('userInfo')?sessionStorage.getItem('userInfo').split(','):[]
         this.state={
-            id:Math.floor(Math.random*1000000),
+            id:Math.floor(Math.random()*100000),
             hotelName:this.props.match.params.restName,
-            name:sessionData?sessionData[0]:'',
-            email:sessionData?sessionData[1]:'',
+            name:sessionData[0],
+            email:sessionData[1],
             address:"YRT 45/13",
-            phone:sessionData?sessionData[2]:'',
+            phone:sessionData[2],
             cost:'',
             menuItem:''
         
@@ -34,6 +34,7 @@ class PlaceOrder extends Component{
             body:JSON.stringify(obj)
         })
         .then(this.props.history.push(`/viewBooking`))
+       
     }
     renderItem = (data)=>{
         if(data){
@@ -50,7 +51,53 @@ class PlaceOrder extends Component{
     }
    
     render(){
-        if(sessionStorage.getItem('loginStatus')==="LoggedOut"){
+        if(sessionStorage.getItem('ltk') !== null){
+            return(
+                <>
+                    <Header></Header>
+                    <div className="container">
+                        <div className="panel panel-primary">
+                            <div className="panel-heading">
+                                <h1>Your Order from {this.state.hotelName} Restaurant</h1>
+                            </div>
+                            <div className="panel-body">
+                                <form>
+                                    <div className="row">
+                                        <input type="hidden" name="cost" value={this.state.cost}></input>
+                                        <input type="hidden" name="id" value={this.state.id}></input>
+                                        <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
+                                        <div className="form-group col-md-6">
+                                            <label>Name</label>
+                                            <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                                        </div>
+                                        <div className="form-group col-md-6">
+                                            <label>Email</label>
+                                            <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                        </div>
+                                        <div className="form-group col-md-6">
+                                            <label>Phone</label>
+                                            <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
+                                        </div>
+                                        <div className="form-group col-md-6">
+                                            <label>Address</label>
+                                            <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
+                                        </div>
+                                    </div>
+                                    {this.renderItem(this.state.menuItem)}
+                                    <div className="row">
+                                        <div className="col-md-12">
+                                            <h2>Total Price is Rs. {this.state.cost}</h2>
+                                        </div>
+                                    </div>
+                                    <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+        }
+        else{
             return(
                 <>
                     <Header></Header>
@@ -58,50 +105,6 @@ class PlaceOrder extends Component{
                 </>
             )
         }
-        return(
-            <>
-                <Header></Header>
-                <div className="container">
-                    <div className="panel panel-primary">
-                        <div className="panel-heading">
-                            <h1>Your Order from {this.state.hotelName} Restaurant</h1>
-                        </div>
-                        <div className="panel-body">
-                            <form>
-                                <div className="row">
-                                    <input type="hidden" name="cost" value={this.state.cost}></input>
-                                    <input type="hidden" name="id" value={this.state.id}></input>
-                                    <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
-                                    <div className="form-group col-md-6">
-                                        <label>Name</label>
-                                        <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                        <label>Email</label>
-                                        <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                        <label>Phone</label>
-                                        <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                        <label>Address</label>
-                                        <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
-                                    </div>
-                                </div>
-                                {this.renderItem(this.state.menuItem)}
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <h2>Total Price is Rs. {this.state.cost}</h2>
-                                    </div>
-                                </div>
-                                <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </>
-        )
     }
     componentDidMount(){
         let menuItem = sessionStorage.getItem('menu');

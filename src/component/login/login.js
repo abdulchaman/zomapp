@@ -7,7 +7,8 @@ class Login extends Component{
         this.state={
             email:"kritika",
             password:"123",
-            message:''
+            message:'',
+            restName:sessionStorage.getItem('restName')
         }
     }
     handleChange=(event)=>{
@@ -28,7 +29,13 @@ class Login extends Component{
                 this.setState({message:data.token})
             }else{
                 sessionStorage.setItem("ltk",data.token)
-                this.props.history.push(`/`)
+                if(sessionStorage.getItem('menu') !== null){
+                    this.props.history.push(`/placeOrder/${this.state.restName}`)
+                }
+                else{
+                    this.props.history.push(`/`)
+                }
+                
             }
         })
     }

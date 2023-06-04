@@ -21,16 +21,16 @@ class ListingApi extends Component{
         return(
             <>
                 <Header></Header>
-                <div className="row">
-                    <div id="mainListing">
-                        <div id="filter">
+                <div id="mainListing">
+                    <div id="filter">
+                        <div className="filter_col">
                             <center><h3>Filters</h3></center>
                             <hr></hr>
                             <CuisineFilter mealId={this.props.match.params.mealId} restPerCuisine={(data)=>this.setDataPerFilter(data)}></CuisineFilter>
                             <CostFilter mealId={this.props.match.params.mealId} restPerCost={(data)=>this.setDataPerFilter(data)}></CostFilter>
                         </div>
-                        <ListingDisplay restData={this.state.restaurantList}></ListingDisplay>
                     </div>
+                    <ListingDisplay restData={this.state.restaurantList}></ListingDisplay>
                 </div>
             </>
         )

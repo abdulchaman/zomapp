@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { withRouter } from "react-router-dom";
 import './header.css';
 import {Link} from "react-router-dom";
 const url="http://3.17.216.66:5000/api/auth/userinfo";
@@ -13,6 +14,7 @@ class Header extends Component{
         sessionStorage.removeItem('userInfo');
         sessionStorage.setItem('loginStatus',"LoggedOut");
         sessionStorage.removeItem('ltk');
+        // sessionStorage.removeItem('menu');
         this.setState({userData:''});
         this.props.history.push(`/`)
     }
@@ -24,21 +26,21 @@ class Header extends Component{
             sessionStorage.setItem('loginStatus',"LoggedIn");
             return(
                 <>
-                    <Link to="" className="btn btn-info">
+                    <Link to="" className="znavLink">
                         <span className="glyphicon glyphicon-user"></span> Hi {data.name}
                     </Link>&nbsp;
-                    <button className="btn btn-danger" onClick={this.handleLogout}>Log Out</button>
+                    <button className="znavLink" onClick={this.handleLogout}>Log out</button>
                 </>
             )
         }
         else{
             return(
                 <>
-                    <Link to="/login" className="btn btn-success">
-                        <span className="glyphicon glyphicon-log-in"></span> LogIn
+                    <Link to="/login" className="znavLink">
+                        <span className="glyphicon glyphicon-log-in"></span> Log in
                     </Link>&nbsp;
-                    <Link to="/register" className="btn btn-info">
-                        <span className="glyphicon glyphicon-user"></span> Register
+                    <Link to="/register" className="znavLink">
+                        <span className="glyphicon glyphicon-user"></span> Sign up
                     </Link>
                 </>
             )
@@ -46,14 +48,19 @@ class Header extends Component{
     }
     render(){
         return(
-            <header>
-                <div id="brand">
-                    Developer Funnel
-                </div>
-                <div id="social">
-                    {this.conditionalHeader()}
-                </div>
-            </header>
+            <div className="zomhead">
+                <header className="zheader">
+                    <nav className="znav">
+                        <div id="brand">
+                            <Link to="/">Zomapp</Link>
+                        </div>
+                        <div id="social">
+                            {this.conditionalHeader()}
+                        </div>
+                    </nav>
+                </header>
+            </div>
+            
         )
     }
     componentDidMount(){
@@ -67,4 +74,4 @@ class Header extends Component{
         .then((data)=>{this.setState({userData:data})})
     }
 }
-export default Header;
+export default withRouter(Header);

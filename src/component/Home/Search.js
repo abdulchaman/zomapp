@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {withRouter} from "react-router-dom";
 import './search.css';
 let lUrl = "http://3.17.216.66:4000/location";
 let restUrl = "http://3.17.216.66:4000/restaurant?stateId=";
@@ -35,26 +36,39 @@ class Search extends Component{
             })
         }
     }
+    handleRest=(event)=>{
+        this.props.history.push(`/details?restId=${event.target.value}`)
+    }
     render(){
         return(
             <>
                 <div id="search">
-                    <div className="logo">
-                        <span>D!</span>
-                    </div>
-                    <div id="heading">
-                        Find Best Place Near You
-                    </div>
-                    <div id="dropdown">
-                        <select onChange={this.handleCity}>
-                            <option>----SELECT LOCATION----</option>
-                            {this.renderCity(this.state.location)}
-                        </select>
-                        <select id="restSelect">
-                            <option>----SELECT Restaurants----</option>
-                            
-                            {this.renderRest(this.state.restData)}
-                        </select>
+                    <div className="search-wrap">
+                        <div className="logo">
+                            <h1>Zomapp</h1>
+                        </div>
+                        <div id="heading">
+                            <h2>Discover the best food & drinks near to you</h2>
+                        </div>
+                        <div class="search-container">
+                            <div className="sr-con-wp">
+                                <div className="sc-city">
+                                    <span className="glyphicon glyphicon-map-marker"></span>
+                                    <select onChange={this.handleCity} className="sr-slct">
+                                        <option>Select location</option>
+                                        {this.renderCity(this.state.location)}
+                                    </select>
+                                </div>
+                                <div className="sr-ln"></div>
+                                <div className="sc-rest">
+                                    <div className="sr-rst-icon"><span className="glyphicon glyphicon-search"></span></div>
+                                    <select id="restSelect" onChange={this.handleRest} className="sr-slct sr-slct-rst">
+                                        <option>Select Restaurant</option>         
+                                        {this.renderRest(this.state.restData)}
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </>
@@ -66,4 +80,4 @@ class Search extends Component{
         .then((data)=> this.setState({location:data}))
     }
 }
-export default Search;
+export default withRouter(Search);

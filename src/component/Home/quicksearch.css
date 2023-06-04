@@ -3,61 +3,81 @@
     margin-left: 10%;
     margin-top: 2%;   
 }
-
+.meal_type_con{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.mealTypewp{
+    width: 31%;
+    margin-bottom: 30px;
+    transition:transform 500ms ease-in;
+}
+.mealType{
+    
+}
+.mealTypewp:hover{
+    transform: scale(1.05);
+}
 #QuickHeading{
-    color:#3b2632;
-    display:block;
+    color:#000;
     font-size:30px;
     font-weight:bold;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-left:1%
+    font-family: 'Poppins', sans-serif;
 }
 
 #QuickSubHeading{
-    line-height:3;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color:gray;
+    font-family: 'Poppins', sans-serif;
+    color:#000;
     font-size:20px;
-    position:absolute;
-    margin-left:1%
+    line-height:1;
 }
 
 .tileContainer{
-    height:180px;
-    width:31%;
-    display:inline-block;
-    margin-top:5%;
-    margin-left:1%;
-    box-shadow: 10px 20px 10px #3b2632;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .tileComponent1{
-    width:52%;
-    float:left;
+    width: 100%;
+    height: 16rem;
+    border-radius: 1.2rem 1.2rem 0 0;
 }
 
 .tileComponent1>img{
     width:100%;
-    height:180px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
 }
 
 .tileComponent2{
-    width:45%;
-    float:left;
-    margin-left: 3%;
-    margin-top: 13%;
+    width: 100%;
+    padding: 1rem 2rem 1.6rem;
+    background: white;
+    border: 1px solid rgb(232, 232, 232);
+    border-radius: 0px 0px 1.2rem 1.2rem;
+    box-sizing: border-box;
 }
 
 .componentHeading{
-    color:#3b2632;
-    font-size: 25px;
-}
-
-.componentHeading span{
-    color:#3b2632 !important;
+    color:#363636;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 .componentSubHeading{
-    color:gray;
-    font-size: 17px;
+    color:#4f4f4f;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.componentSubHeading p{
+    margin: 0;
+}
+.mealType:focus,
+.mealType:hover{
+    text-decoration: none;
 }
