@@ -1,59 +1,80 @@
 #mainListing{
+    max-width: 110rem;
+    margin: 7rem auto 3rem;
     display: flex;
-    margin: 7rem 3rem 3rem 5rem;
+    justify-content: space-between;
 }
 
 #filter{
-    height:600px;
-    width:20%;
-    border: 5px solid gray;
+    height: 470px;
+    width: 20%;
+    border-radius: 20px;
+    border: 2px solid #d5d5d5;
 }
 #content{
-    width:65%;
-    margin-left: 5%;
+    width:75%;
 }
 
-.item {
-    width: 875px;
-    height: 320px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-    margin-bottom: 20px;
+.lst_item {
+    margin-bottom: 2rem;
+    gap: 1rem;
+
+}
+.lst_anc{
+    padding: 2rem;
+    display: block;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    transition:all 300ms ease;
+}
+.lst_anc:hover,
+.lst_anc:focus{
+    text-decoration:none;
+    box-shadow: 0px 0px 8px 0px #e0e0e0;
+}
+.lst_wrap{
+    display: flex;
+}
+.lst_col_img{
+    max-width: 33rem;
+    width:100%;
+    height: 24rem;
+    position: relative;
+}
+.lst_col_cnt{
+    padding: 4rem;
+}
+.hotel_img{
+    position: relative;
+    width: 100%;
+    height: 100%; 
 }
 
-.Image {
-    width: 340px;
-    height: 260px;
-    border-radius: 23px;
-    background-color: #ea6060;
-    margin-left:5%;
+
+.hotel_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #e0e0e0;
 }
 
 .hotel_name {
-    width: 100%;
-    height: 43px;
-    font-family: Poppins;
-    font-size: 25px;
+    font-size: 1.8rem;
     font-weight: 600;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: left;
-    color: #192f60;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    color: #000;
+    margin: 0 0 1rem 0;
 }
 
 .city_name {
-    width: 100%;
-    height: 23px;
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 5;
-    letter-spacing: normal;
-    text-align: left;
-    color: #192f60;
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    color: #000;
+    margin: 0 0 1rem 0;
 }
 
 .rating {
@@ -61,8 +82,50 @@
 }
 
 .labelDiv{
-    margin-top:5%;
-    font-size:25px;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+}
+
+.rating_txt {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: #32cc56;
+    width: 5rem;
+    height: 2.4rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+}
+.rating_txt i{
+    font-size: 1rem;
+    margin-left: 0.4rem;
+}
+.fl_mn h3{
+    text-align: center;
+    font-size: 2.2rem;
+}
+.flt_ttl h3{
+    text-align: center;
+    font-size: 1.8rem;
+}
+.flt_wp{
+    margin-left: 20%;  
+}
+.flt_wp label{
+    font-size: 1.4rem; 
+    font-weight: 500;
+    color: #3b3b3b;
+    cursor: pointer;
+}
+.flt_wp input{
+    width:1rem;
+    height: 1rem;
 }
 /* .mealtype{
     margin-right: 20px;

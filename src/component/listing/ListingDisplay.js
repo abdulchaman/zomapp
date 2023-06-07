@@ -34,31 +34,36 @@ const ListingDisplay = (props)=>{
           if(restData.length > 0){
             return restData.map((item)=>{
                 return (
-                    <div className="item" key={item._id}>
-                      <div className='row'>
-                        <div className='col-md-5'>
-                            <img src={item.restaurant_thumb} className="Image" alt={item.restaurant_name}></img>
-                        </div>
-                        <div className='col-md-7'>
-                            <div className='hotel_name'>
-                               <Link to={`/details?restId=${item.restaurant_id}`}>{item.restaurant_name}</Link>
+                    <div className="lst_item" key={item._id}>
+                        <Link to={`/details?restId=${item.restaurant_id}`} className="lst_anc">
+                            <div className='lst_wrap'>
+                                <div className='lst_col_img'>
+                                    <div className="hotel_img">
+                                        <img src={item.restaurant_thumb} alt={item.restaurant_name}></img>
+                                    </div>
+                                    <div className='rating_txt'>{item.average_rating} <i class="fa-solid fa-star"></i></div>
+                                </div>
+                                <div className='lst_col_cnt'>
+                                    <h3 className='hotel_name'>
+                                        {item.restaurant_name}
+                                    </h3>
+                                    <h4 className='city_name'>{item.address}</h4>
+                                    
+                                    <h4 className='city_name'>Rs. {item.cost}</h4>
+                                    <div className='labelDiv'>
+                                        {item.mealTypes.map((type)=>{
+                                            return <><span className={`label ${getMealBtnColor(type.mealtype_name)}`} key={type.mealtype_id}>{type.mealtype_name}</span><span>&nbsp;</span></>
+                                        })}
+                                    </div>
+                                    <div className='labelDiv'>
+                                        {item.cuisines.map((type)=>{
+                                            return <><span className={`label ${getCusineBtnColor(type.cuisine_name)}`} key={type.cuisine_id}>{type.cuisine_name}</span><span>&nbsp;</span></>                    
+                                        })}
+                                    </div>
+                                </div>
                             </div>
-                            <div className='city_name'>{item.address}</div>
-                            <div className='city_name'>{item.rating_text}</div>
-                            <div className='city_name'>Rs. {item.cost}</div>
-                            <div className='labelDiv'>
-                                {item.mealTypes.map((type)=>{
-                                    return <><span className={`label ${getMealBtnColor(type.mealtype_name)}`} key={type.mealtype_id}>{type.mealtype_name}</span><span>&nbsp;</span></>
-                                })}
-                            </div>
-                            <div className='labelDiv'>
-                                {item.cuisines.map((type)=>{
-                                    return <><span className={`label ${getCusineBtnColor(type.cuisine_name)}`} key={type.cuisine_id}>{type.cuisine_name}</span><span>&nbsp;</span></>                    
-                                })}
-                            </div>
-
-                        </div>
-                      </div>
+                        </Link>
+                      
                     </div>
                 )
             })

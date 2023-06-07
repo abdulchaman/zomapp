@@ -20,8 +20,8 @@ class CostFilter extends Component{
     render(){
         return(
             <>
-                <center><h3>Cost Filter</h3></center>
-                <div style={{marginLeft:"15%"}} onChange={this.costFilter}>
+                <div className="flt_ttl"><h3>Cost Filter</h3></div>
+                <div className="flt_wp" onChange={this.costFilter}>
                     <label className="radio">
                         <input type="radio" name="cost" value=""></input>All
                     </label>

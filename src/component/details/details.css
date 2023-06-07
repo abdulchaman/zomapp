@@ -1,30 +1,50 @@
 .main{
-    display: inline-block;
-    margin-left:5%
+   max-width: 110rem;
+   margin: 7rem auto 3rem;
 }
 
-.tileImage{
-
-    width:48%;
-    float: left;
+.imageClass{
+    width: 100%;
+    height: 30rem;
 }
-
-
-
-.tileContent{
-
-    width:50%;
-    margin-left: 2%;
-    float: left;
+.imageClass img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.imageClass > img{
-    height: 500px;
-    width:95%;
-    margin-left: 3%;
-    margin-top: 3%;
+.rest_name h1{
+    font-size: 3rem;
+    line-height: 1;
 }
-
+.cfeedback{
+    color: #828282;
+}
+.avrg_rtng{
+    color: #828282;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.rtng_xt{
+    background: #32cc56;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    position: relative;
+    width: 4.4rem;
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+}
+.rtng_xt i{
+    font-size: 1rem;
+}
+.rest_txt p{
+    color: #828282;
+    font-size: 1.7rem;
+}
 
 #cfeedback{
     margin-left:3%;

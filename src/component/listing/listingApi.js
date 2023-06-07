@@ -24,7 +24,7 @@ class ListingApi extends Component{
                 <div id="mainListing">
                     <div id="filter">
                         <div className="filter_col">
-                            <center><h3>Filters</h3></center>
+                            <div className="fl_mn"><h3>Filters</h3></div>
                             <hr></hr>
                             <CuisineFilter mealId={this.props.match.params.mealId} restPerCuisine={(data)=>this.setDataPerFilter(data)}></CuisineFilter>
                             <CostFilter mealId={this.props.match.params.mealId} restPerCost={(data)=>this.setDataPerFilter(data)}></CostFilter>

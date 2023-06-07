@@ -22,21 +22,28 @@ class MenuDisplay extends Component{
         if(menuData){
             return menuData.map((item)=>{
                 return(
-                    <div key={item.menu_id}>
-                        <div>
-                            <div className="col-md-7">
-                                <b>{item.menu_id}</b>&nbsp;
-                                <img src={item.menu_image} alt={item.menu_name} style={{width:80, height:80}}></img>&nbsp;
-                                {item.menu_name} - Rs.{item.menu_price}
+                    <div className="menu_sngl" key={item.menu_id}>
+                        <div className="menu_col1">
+                            <div className="menu_id">{item.menu_id}</div>
+                            <div className="menu_img">
+                                <img src={item.menu_image} alt={item.menu_name}></img>
                             </div>
-                            <div className="col-md-4">
-                                <button className="btn btn-success" onClick={()=>this.placeOrder(item.menu_id)}>
-                                    <span className="glyphicon glyphicon-plus"></span>
-                                </button>&nbsp;
-                                <button className="btn btn-danger" onClick={()=>this.removeOrder(item.menu_id)}>
-                                    <span className="glyphicon glyphicon-minus"></span>
-                                </button>
+                        </div>
+                        <div className="menu_col2">
+                            <div className="menu_name">
+                                {item.menu_name}
                             </div>
+                            <div className="menu_price">
+                                Rs.{item.menu_price}
+                            </div>
+                        </div>
+                        <div className="menu_col3">
+                            <button className="btn btn-success" onClick={()=>this.placeOrder(item.menu_id)}>
+                                <span className="glyphicon glyphicon-plus"></span>
+                            </button>&nbsp;
+                            <button className="btn btn-danger" onClick={()=>this.removeOrder(item.menu_id)}>
+                                <span className="glyphicon glyphicon-minus"></span>
+                            </button>
                         </div>
                     </div>
                 )
@@ -46,12 +53,12 @@ class MenuDisplay extends Component{
     render(){
         return(
             <>
-                <div>
-                    <div className="col-md-12 bg-success">
+                <div className="menu_item_cnt">
+                    <div className="mnu_ord">
                         <h2>Item Added</h2>
                         <h3>Item Number {this.renderCart(this.orderId)} Added</h3>
                     </div>
-                    <div className="col-md-12 bg-info">
+                    <div className="menu_rnd">
                         {this.renderMenu(this.props)}
                     </div>
                 </div>

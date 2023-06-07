@@ -39,11 +39,10 @@ class Details extends Component{
                     </div>
                     <div className="tileContent">
                         <div className="content">
-                            <h1>{details.restaurant_name}</h1>
-                            <span id="cfeedback">231 Customers Rating Average</span>
-                            <h3>Old Price <del>Rs. 450</del></h3>
-                            <h3>Offer Price Rs. {details.cost}</h3>
-                            <h3>Best Taste of Fresh Chai with Samosa At your Door or DineIn</h3>
+                            <div className='rest_name'><h1>{details.restaurant_name}</h1></div>
+                            <div className="cfeedback"><span>231 Customers Reviews</span></div>
+                            <div className='avrg_rtng'>Rating <span className='rtng_xt'>{details.average_rating} <i class="fa-solid fa-star"></i></span></div>
+                            <div className='rest_txt'><p>Best Taste of Fresh Chai with Samosa At your Door or DineIn</p></div>
                             <div>
                                 <div className="icons">
                                     <img src="https://i.ibb.co/wJvrhYg/veg.png"/>
@@ -71,8 +70,8 @@ class Details extends Component{
                         &nbsp;
                         <button className='btn btn-success' onClick={this.proceed}>Proceed</button>
                     </div>
-                    <div className='col-md-12'>
-                        <center><h2>Menu</h2></center>
+                    <div className='menu_cnt'>
+                        <div className='menu_ttl'><h2>Menu</h2></div>
                         <MenuDisplay menuData={this.state.menuList} finalOrder={(data)=>this.addToCart(data)}></MenuDisplay>
                     </div>
                 </div>
