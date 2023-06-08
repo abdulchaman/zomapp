@@ -41,9 +41,13 @@ class PlaceOrder extends Component{
             return data.map((item)=>{
                 return(
                     <div className="orderItems" key={item.menu_id}>
-                        <img src={item.menu_image} alt={item.menu_name}></img>
-                        <h3>{item.menu_name}</h3>
-                        <h4>Rs. {item.menu_price}</h4>
+                        <div className="ord_img">
+                            <img src={item.menu_image} alt={item.menu_name}></img>
+                        </div>
+                        <div className="ord_cnt">
+                            <h4>{item.menu_name}</h4>
+                            <h4>Rs. {item.menu_price}</h4>
+                        </div>    
                     </div>
                 )
             })
@@ -55,42 +59,44 @@ class PlaceOrder extends Component{
             return(
                 <>
                     <Header></Header>
-                    <div className="container">
-                        <div className="panel panel-primary">
-                            <div className="panel-heading">
-                                <h1>Your Order from {this.state.hotelName} Restaurant</h1>
-                            </div>
-                            <div className="panel-body">
-                                <form>
-                                    <div className="row">
-                                        <input type="hidden" name="cost" value={this.state.cost}></input>
-                                        <input type="hidden" name="id" value={this.state.id}></input>
-                                        <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
-                                        <div className="form-group col-md-6">
-                                            <label>Name</label>
-                                            <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                    <div className="order_con">
+                        <div className="container-fluid">
+                            <div className="panel panel-primary">
+                                <div className="panel-heading">
+                                    <h1 className="order_ttl">Your Order from {this.state.hotelName} Restaurant</h1>
+                                </div>
+                                <div className="panel-body">
+                                    <form>
+                                        <div className="row">
+                                            <input type="hidden" name="cost" value={this.state.cost}></input>
+                                            <input type="hidden" name="id" value={this.state.id}></input>
+                                            <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
+                                            <div className="form-group col-md-6">
+                                                <label>Name</label>
+                                                <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                                <label>Email</label>
+                                                <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                                <label>Phone</label>
+                                                <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
+                                            </div>
+                                            <div className="form-group col-md-6">
+                                                <label>Address</label>
+                                                <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
+                                            </div>
                                         </div>
-                                        <div className="form-group col-md-6">
-                                            <label>Email</label>
-                                            <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                        {this.renderItem(this.state.menuItem)}
+                                        <div className="row">
+                                            <div className="col-md-12">
+                                                <h2 className="ord_prc">Total Price is Rs. {this.state.cost}</h2>
+                                            </div>
                                         </div>
-                                        <div className="form-group col-md-6">
-                                            <label>Phone</label>
-                                            <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
-                                        </div>
-                                        <div className="form-group col-md-6">
-                                            <label>Address</label>
-                                            <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
-                                        </div>
-                                    </div>
-                                    {this.renderItem(this.state.menuItem)}
-                                    <div className="row">
-                                        <div className="col-md-12">
-                                            <h2>Total Price is Rs. {this.state.cost}</h2>
-                                        </div>
-                                    </div>
-                                    <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
-                                </form>
+                                        <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,7 +107,7 @@ class PlaceOrder extends Component{
             return(
                 <>
                     <Header></Header>
-                    <center><h2>Login First to Place the order</h2></center>
+                    <div className="ord_els"><h2>Login First to Place the order</h2></div>
                 </>
             )
         }
