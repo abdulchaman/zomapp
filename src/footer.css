@@ -82,3 +82,13 @@ footer{
     color: #fff;
 }
 
+
+/* ------Media query------ */
+@media only screen and (max-width: 1280px) {
+    .foot_con{
+        padding: 5rem 2rem;
+    }
+    .ft_lg a{
+        font-size: 38px;   
+    }
+  }

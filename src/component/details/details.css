@@ -1,5 +1,5 @@
 .main{
-    margin: 7rem 0 0 0;
+    margin: 8rem 0 0 0;
 }
 .tileImage{
     max-width: 110rem;
@@ -158,4 +158,52 @@
 }
 #Atoc{
     background-color:green
+}
+
+/* Media Query */
+@media only screen and (max-width: 1280px){
+    .tileImage{
+        padding: 0 2rem;
+    }
+    .tileContent{
+        padding: 0 2rem;  
+    }
+    .rest_name h1{
+        font-size: 2.5rem;
+    }
+    .tab_rest_name {
+        font-size: 2rem;
+    }
+    .tab_rest_para {
+        font-size: 1.4rem;
+    }
+    .menu_ttl h3{
+        font-size: 2.5rem;
+    }
+    .mnu_ord h2{
+        font-size: 2rem;  
+    }
+    .mnu_ord h3{
+        font-size: 1.8rem;  
+    }
+    .menu_item_cnt{
+        padding: 0 2rem;
+    }
+    .menu_id{
+        font-size: 1.4rem;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+    .menu_name, .menu_price {
+        font-size: 1.4rem;
+    }
+    .menu_img {
+        width: 18rem;
+        height: 15rem;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .imageClass{
+        height: 20rem;  
+    }
 }

@@ -1,7 +1,8 @@
 #quickSearch{
-    width:80%;
-    margin-left: 10%;
-    margin-top: 2%;   
+    width: 80%;
+    margin-left: auto;
+    margin-top: 2%;
+    margin-right: auto;  
 }
 .meal_type_con{
     display: flex;
@@ -80,4 +81,24 @@
 .mealType:focus,
 .mealType:hover{
     text-decoration: none;
+}
+
+/* Media query */
+@media only screen and (max-width: 1280px){
+    #QuickHeading{
+        font-size: 25px;
+    }
+    #QuickSubHeading{
+        font-size: 17px;  
+    }
+    .componentHeading{
+        font-size: 1.7rem;
+        line-height: 2.4rem;
+    }
+}
+@media only screen and (max-width: 1200px){
+    #quickSearch{
+        width: 100%;
+        padding: 0 2rem;
+    }
 }

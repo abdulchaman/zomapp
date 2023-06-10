@@ -67,34 +67,38 @@ class PlaceOrder extends Component{
                                 </div>
                                 <div className="panel-body">
                                     <form>
-                                        <div className="row">
-                                            <input type="hidden" name="cost" value={this.state.cost}></input>
-                                            <input type="hidden" name="id" value={this.state.id}></input>
-                                            <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
-                                            <div className="form-group col-md-6">
-                                                <label>Name</label>
-                                                <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                                        <div className="ord_frm">
+                                            <div className="row">
+                                                <input type="hidden" name="cost" value={this.state.cost}></input>
+                                                <input type="hidden" name="id" value={this.state.id}></input>
+                                                <input type="hidden" name="hotelName" value={this.state.hotelName}></input>
+                                                <div className="form-group col-md-6">
+                                                    <label>Name</label>
+                                                    <input className="form-control" name="name" value={this.state.name} onChange={this.handleChange}></input>
+                                                </div>
+                                                <div className="form-group col-md-6">
+                                                    <label>Email</label>
+                                                    <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
+                                                </div>
+                                                <div className="form-group col-md-6">
+                                                    <label>Phone</label>
+                                                    <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
+                                                </div>
+                                                <div className="form-group col-md-6">
+                                                    <label>Address</label>
+                                                    <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
+                                                </div>
                                             </div>
-                                            <div className="form-group col-md-6">
-                                                <label>Email</label>
-                                                <input className="form-control" name="email" value={this.state.email} onChange={this.handleChange}></input>
-                                            </div>
-                                            <div className="form-group col-md-6">
-                                                <label>Phone</label>
-                                                <input className="form-control" name="phone" value={this.state.phone} onChange={this.handleChange}></input>
-                                            </div>
-                                            <div className="form-group col-md-6">
-                                                <label>Address</label>
-                                                <input className="form-control" name="address" value={this.state.address} onChange={this.handleChange}></input>
-                                            </div>
+                                        </div>                                 
+                                        <div className="ren_ord">
+                                            {this.renderItem(this.state.menuItem)}
                                         </div>
-                                        {this.renderItem(this.state.menuItem)}
-                                        <div className="row">
-                                            <div className="col-md-12">
-                                                <h2 className="ord_prc">Total Price is Rs. {this.state.cost}</h2>
-                                            </div>
+                                        <div className="ord_prc_con">
+                                            <h2 className="ord_prc">Total Price is Rs. {this.state.cost}</h2>
                                         </div>
-                                        <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
+                                        <div className="chk_btn">
+                                            <button className="btn btn-success" onClick={this.handleCheckout}>Checkout</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

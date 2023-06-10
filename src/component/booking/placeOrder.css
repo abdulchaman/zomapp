@@ -1,6 +1,6 @@
 .order_con{
     max-width: 110rem;
-    margin: 7rem auto 3rem auto;
+    margin: 8rem auto 3rem auto;
 }
 .orderItems{
     float: left;
@@ -31,9 +31,38 @@
 }
 .ord_els{
     max-width: 110rem;
-    margin: 7rem auto 5rem auto;
+    margin: 8rem auto 5rem auto;
 }
 .ord_els h2{
     font-size: 3rem;
     text-align: center;
+}
+
+.ord_frm, .ren_ord, .ord_prc_con, .chk_btn{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.dis_ord{
+    max-width: 110rem;
+    margin: 8rem auto 5rem auto;
+}
+
+/* Media Query */
+@media only screen and (max-width: 1280px){
+    .order_ttl {
+        font-size: 2.5rem;
+    }
+    .orderItems{
+        width: 24rem;  
+    }
+    .ord_img{
+        height: 16rem;   
+    }
+    .ord_cnt h4 {
+        font-size: 1.4rem;
+    }
+    .ord_prc {
+        font-size: 2rem;
+    }
 }

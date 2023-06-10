@@ -10,6 +10,15 @@ class Header extends Component{
             userData:''
         }
     }
+    responsiveNav=()=>{
+        const topNav = document.getElementById('myTopNav');
+        if(topNav.className==='topnav'){
+            topNav.className += " responsive";
+        }
+        else{
+            topNav.className = 'topnav';
+        }
+    }
     handleLogout=()=>{
         sessionStorage.removeItem('userInfo');
         sessionStorage.setItem('loginStatus',"LoggedOut");
@@ -26,9 +35,9 @@ class Header extends Component{
             sessionStorage.setItem('loginStatus',"LoggedIn");
             return(
                 <>
-                    <Link to="" className="znavLink">
+                    <Link to="" className="znavLink nav-link">
                         <span className="glyphicon glyphicon-user"></span> Hi {data.name}
-                    </Link>&nbsp;
+                    </Link>
                     <button className="znavLink" onClick={this.handleLogout}>Log out</button>
                 </>
             )
@@ -38,7 +47,8 @@ class Header extends Component{
                 <>
                     <Link to="/login" className="znavLink">
                         <span className="glyphicon glyphicon-log-in"></span> Log in
-                    </Link>&nbsp;
+                    </Link>
+                
                     <Link to="/register" className="znavLink">
                         <span className="glyphicon glyphicon-user"></span> Sign up
                     </Link>
@@ -50,17 +60,18 @@ class Header extends Component{
         return(
             <div className="zomhead">
                 <header className="zheader">
-                    <nav className="znav">
+                    <nav className="topnav" id="myTopNav">
                         <div id="brand">
                             <Link to="/">Zomapp</Link>
                         </div>
+                       
                         <div id="social">
                             {this.conditionalHeader()}
                         </div>
+                        <button className="pr_icon" onClick={this.responsiveNav}><i class="fa-solid fa-user"></i></button>
                     </nav>
                 </header>
             </div>
-            
         )
     }
     componentDidMount(){

@@ -1,4 +1,11 @@
 .reg_con{
     max-width: 110rem;
-    margin: 7rem auto 2rem auto;
+    margin: 8rem auto 2rem auto;
+}
+
+/* Media Query */
+@media only screen and (max-width: 1280px){
+    .reg_con{
+        padding: 0 2rem;
+    }
 }

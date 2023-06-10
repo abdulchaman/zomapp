@@ -113,18 +113,54 @@
     font-family: 'Poppins', sans-serif;
     margin-bottom: 0;
 }
-
-#dropdown{
-
-
-    /* border:2px solid white */
-}
-
 select{
-
     font-size:15px;
 }
 
-#restSelect{
-
-}
+/* Media query */
+@media only screen and (max-width: 1280px) {
+    .logo h1{
+       font-size: 70px;
+       line-height: 73px;
+    }
+    #heading h2{
+        margin-top: 25px;
+        font-size: 26px;
+    }
+    .search-container{
+        margin-top: 25px;
+    }
+    .sr-con-wp{
+        height: 44px;
+    }
+    .sc-city{
+        width: 230px;  
+    }
+    .sc-rest{
+        width: 460px;  
+    }
+    .sc-rest span{
+        font-size: 17px;
+    }
+  }
+  @media only screen and (max-width: 767px){
+    .sr-con-wp{
+        width: 30rem;
+        flex-direction: column;
+        gap: 3rem;
+        background: transparent;
+        border-radius: 10px;
+        /* box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 8px; */
+        border: none;
+        height: auto;
+    }
+    .sc-city,
+    .sc-rest{
+        width: 100%;
+        height: 4rem;
+        background-color: #fff;
+    }
+    .sr-ln{
+        display: none;
+    }
+  }
