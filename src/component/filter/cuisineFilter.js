@@ -18,7 +18,7 @@ class CuisineFilter extends Component{
     render(){
         return(
             <>
-                <div className="flt_ttl"><h3>Cuisine Filter</h3></div>
+                {/* <div className="flt_ttl"><h3>Cuisine Filter</h3></div> */}
                 <div className="flt_wp" onChange={this.cuisineFilter}>
                     <label className="radio">
                         <input type="radio" name="cuisine" value=""/>All

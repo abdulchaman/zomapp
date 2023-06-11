@@ -20,7 +20,7 @@ class CostFilter extends Component{
     render(){
         return(
             <>
-                <div className="flt_ttl"><h3>Cost Filter</h3></div>
+                {/* <div className="flt_ttl"><h3>Cost Filter</h3></div> */}
                 <div className="flt_wp" onChange={this.costFilter}>
                     <label className="radio">
                         <input type="radio" name="cost" value=""></input>All

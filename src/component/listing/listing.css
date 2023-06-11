@@ -3,16 +3,98 @@
     margin: 8rem auto 3rem;
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+.filter_modal{
+    width: 15%;
+    position: relative;
+}
+.flt_btn{
+    font-size: 1.7rem;
+    padding: .5rem 1.7rem;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    position: sticky;
+    top: 8rem;
+}
+.flt_tab{
+    position: relative;
+}
+.flt_tab .react-tabs{
+    display: flex;
+}
+.flt_tab .react-tabs__tab-list{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: #e0e0e0;
+    min-height: 22rem;
+    width: 25%;
+}
+.flt_tab .react-tabs__tab-panel{
+    width: 70%;
+}
+.flt_tab .react-tabs__tab{
+    border: none;
+    bottom: 0px  !important;
+    transition: .3s ease;
+}
+.flt_tab .react-tabs__tab--selected{
+    border-radius: 0;
+    border:none;
+    position: relative;
+}
+.flt_tab .react-tabs__tab--selected::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    border-left: 2px solid #000;
+    height: 100%;
+    top: 0;
+}
+.mdl_flt_wrp{
+    position: relative;
+}
+.cls_mdl{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    border-radius: 5px;
+}
+.flt_ttl{
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.7rem;
+    line-height: 1;
+}
+.apply_btn{
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+    background: #000;
+    color: #fff;
+    font-size: 1.7rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    line-height: 1;
 }
 
-#filter{
+
+/* #filter{
     height: 470px;
     width: 20%;
     border-radius: 20px;
     border: 2px solid #d5d5d5;
-}
+} */
 #content{
-    width:75%;
+    width:80%;
+    margin: 0 auto 0 auto;
 }
 
 .lst_item {
@@ -126,6 +208,20 @@
 .flt_wp input{
     width:1rem;
     height: 1rem;
+}
+
+
+
+/* Modal */
+.ReactModal__Overlay{
+    background-color: #201d1dbf !important;
+    z-index: 9999;
+}
+.ReactModal__Content{
+    margin-top: 5rem;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Media Query */

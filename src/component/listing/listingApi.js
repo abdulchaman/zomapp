@@ -68,7 +68,7 @@ class ListingApi extends Component{
                                             </TabPanel>
                                         </Tabs> 
                                     </div>
-                                    <button className='apply_btn'>Apply</button>
+                                    <button className='apply_btn' onClick={this.closeModal}>Apply</button>
                                 </div>
                             </div>
                         </Modal>
