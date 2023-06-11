@@ -102,3 +102,19 @@
         padding: 0 2rem;
     }
 }
+@media only screen and (max-width: 768px){
+    #QuickHeading {
+        font-size: 20px;
+    }
+    #QuickSubHeading {
+        font-size: 15px;
+    }
+    .mealTypewp{
+        width: 48%; 
+    }
+}
+@media only screen and (max-width: 600px){
+    .mealTypewp {
+        width: 100%;
+    }
+}

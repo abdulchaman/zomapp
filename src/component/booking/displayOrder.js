@@ -25,7 +25,7 @@ const Display = (props)=>{
         <>
             <div className="dis_ord">
                 <div className="container-fluid">
-                    <center><h2>Orders</h2></center>
+                    <center><h2 className="dis_ord_ttl">Orders</h2></center>
                     <table className="table">
                         <thead>
                             <tr>

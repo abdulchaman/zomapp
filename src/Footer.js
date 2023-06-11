@@ -58,6 +58,9 @@ const Footer = () =>{
                     </div>
                 </div>
             </div>
+            <div className="foot_cp">
+                <div className="cpt_msg">2023 &#169; Zomapp Made by <a href="https://github.com/abdulchaman">Abdul Chaman</a></div>
+            </div>
         </footer>
     )
 }

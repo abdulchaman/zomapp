@@ -128,6 +128,7 @@
 .menu_img img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .menu_name,
 .menu_price{
@@ -205,5 +206,65 @@
 @media only screen and (max-width: 1200px){
     .imageClass{
         height: 20rem;  
+    }
+}
+@media only screen and (max-width: 600px){
+    .imageClass {
+        height: 15rem;
+    }
+    .rest_name h1 {
+        font-size: 2rem;
+    }
+    .rest_txt p{
+        font-size:1.3rem;
+    }
+    .cfeedback{
+        font-size:1.3rem; 
+    }
+    .avrg_rtng{
+        font-size: 1.3rem;
+    }
+    .rtng_xt{
+        font-size: 1.3rem; 
+    }
+    .icons{
+        width: 3rem;
+        height: 3rem;
+    }
+    .tab_rest_name {
+        font-size: 1.7rem;
+    }
+    .tab_rest_para {
+        font-size: 1.3rem;
+    }
+    .menu_ttl h3 {
+        font-size: 2rem;
+    }
+    .mnu_ord h2 {
+        font-size: 1.7rem;
+    }
+    .mnu_ord h3 {
+        font-size: 1.7rem;
+    }
+    .mnu_ord{
+        padding:1.7rem;
+    }
+    .menu_sngl{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+    .menu_col1{
+        width: 100%;
+    }
+    .menu_img{
+        width: 100%; 
+    }
+    .menu_col2 {
+        width: 100%;
+    }
+    .menu_name, .menu_price{
+        font-size: 1.3rem;   
     }
 }

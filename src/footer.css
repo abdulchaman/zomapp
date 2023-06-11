@@ -7,7 +7,7 @@ footer{
     justify-content: space-between;
     max-width: 110rem;
     margin: 0 auto;
-    padding: 5rem 0;
+    padding: 5rem 0 1rem;
 }
 .ft_lg a{
     font-family: 'Metrophobic', sans-serif;
@@ -82,13 +82,53 @@ footer{
     color: #fff;
 }
 
-
+.foot_cp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+.cpt_msg{
+    font-size: 1.5rem;
+    color: #000;
+}
+.cpt_msg a{
+    color: rgb(105, 105, 105);
+    text-decoration: none;
+}
 /* ------Media query------ */
 @media only screen and (max-width: 1280px) {
     .foot_con{
-        padding: 5rem 2rem;
+        padding: 5rem 2rem 1rem;
     }
     .ft_lg a{
         font-size: 38px;   
+    }
+  }
+  @media only screen and (max-width: 768px){
+    .ft_lg a {
+        font-size: 30px;
+    }
+    .ft_cn a{
+        font-size: 1.3rem
+    }
+    .ft_ttl{
+        font-size: 1.3rem;
+    }
+    .ft_cl li{
+        font-size: 1.3rem; 
+    }
+  }
+  @media only screen and (max-width: 767px){
+    .foot_con{
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .ft_scl{
+     justify-content: flex-start;
+    gap: 1rem;   
+    }
+    .cpt_msg{
+        font-size: 1.3rem;
     }
   }
